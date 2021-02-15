@@ -45,10 +45,6 @@ A1 = [];
 B1 = [];
 MSE1 = [];
 
-
-%[X,i0] = sort(XY_data (:,1));
-%Y = XY_data (i0,2);
-
 X = XY_data (:,1);
 Y = XY_data (:,2);
 
