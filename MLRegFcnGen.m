@@ -23,7 +23,7 @@ function RegModel = MLRegFcnGen(varargin)
 %   - This function is generating a regression function
 %   - Gerating the function based on training (ML)
 %	
-% Made by Amang Kim [v0.1 || 2/15/2021]
+% Made by Amang Kim [v0.15 || 2/15/2021]
 
 %--------------------(XY_data,iter)
 inputs={'XY_data', 'iter', 'learn_rate'};
@@ -72,20 +72,15 @@ for i1 = 2:iter0
     x1 = X(i1);
     y1 = Y(i1);
 
-    %(-a0*x0-b0)
     dfa = dfa+(-1)*x0*2*(y0-a0*x0-b0);
     dfb = dfb+(-1)*2*(y0-a0*x1-b0);
 
-    %pause;
 
     a1 = a0 - dfa*learn_rate/i1;
     b1 = b0 - dfb*learn_rate/i1;
     
     A1 = [A1 a1];
     B1 = [B1 b1];
-    
-    %a2 = mean(A1);
-    %b2 = mean(B1);
     
     mse0 = (y1 - a1*x1-b1)^2;
     MSE1 = [MSE1 mse0];
@@ -104,12 +99,8 @@ a0_m = a1;
 
 
 MSE = mean(MSE1);
-%MSE = mse0;
 
 %===========================================
-
-%b1 = sum(XY_bar)/sum(XXbar2);
-%b0 = Y_bar - b1*X_bar;
 b1 = a0_m;
 b0 = b0_m;
 
