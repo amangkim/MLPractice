@@ -75,7 +75,6 @@ for i1 = 2:iter0
     dfa = dfa+(-1)*x0*2*(y0-a0*x0-b0);
     dfb = dfb+(-1)*2*(y0-a0*x1-b0);
 
-
     a1 = a0 - dfa*learn_rate/i1;
     b1 = b0 - dfb*learn_rate/i1;
     
