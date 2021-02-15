@@ -45,8 +45,8 @@ A1 = [];
 B1 = [];
 MSE1 = [];
 
-X = XY_data (:,1);
-Y = XY_data (:,2);
+[X,i0] = sort(XY_data (:,1));
+Y = XY_data (i0,2);
 
 y0 = min(Y);
 y1 = max(Y);
